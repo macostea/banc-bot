@@ -1,7 +1,7 @@
 const fs = require('fs')
 const cheerio = require('cheerio')
 
-;(async () => {
+(async () => {
   main()
 })()
 
@@ -12,7 +12,8 @@ async function main() {
   const categories = rawCategories.map((category) => {
     const name = category[0]
       .replace('http://www.bancuri.net/Categoria_', '')
-      .split('-')[0]
+      .split('-')
+      .shift()
       .replaceAll('_', ' ')
     return {
       name: name,
