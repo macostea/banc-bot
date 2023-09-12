@@ -8,9 +8,7 @@ const cheerio = require('cheerio')
 async function main() {
   console.log('Starting to scrape')
 
-  const rawCategories = JSON.parse(
-    fs.readFileSync('categories.json', 'utf8'),
-  )
+  const rawCategories = JSON.parse(fs.readFileSync('categories.json', 'utf8'))
   const categories = rawCategories.map((category) => {
     const name = category[0]
       .replace('http://www.bancuri.net/Categoria_', '')
